@@ -1,0 +1,34 @@
+# ==============================================================================
+# WAYPOINT CORE DEPENDENCIES (KITTI Focused)
+# Target: Python 3.10 (Recommended for stability)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. CORE MACHINE LEARNING FRAMEWORK (PyTorch)
+# These are essential but often installed outside of this file to manage CUDA versions.
+# We list them for clear dependency tracking.
+# ------------------------------------------------------------------------------
+torch>=2.0.0
+torchvision>=0.15.0
+
+# NOTE ON SPCONV:
+# The requirement for the 'spconv' library remains. It is necessary for the 
+# Sparse 3D Convolutional Backbone (our BEV Feature Generator).
+# Installation is environment-dependent and handled via instructions in the 
+# README and Makefile (e.g., 'pip install spconv-cu118').
+
+# ------------------------------------------------------------------------------
+# 2. DATA HANDLING, NUMERICAL & UTILITIES
+# ------------------------------------------------------------------------------
+numpy>=1.22.0          # Essential for all point cloud and voxel handling
+scipy>=1.9.0           # General scientific computing (e.g., coordinate transforms)
+tqdm>=4.64.0           # Progress bar for data processing and training loops
+PyYAML>=6.0.0          # For reading model configuration files (e.g., config/kitti_voxel.yaml)
+Pillow>=9.0.0          # For reading/handling calibration images and data
+
+# ------------------------------------------------------------------------------
+# 3. VISUALIZATION AND PLOTTING
+# ------------------------------------------------------------------------------
+matplotlib>=3.6.0      # Standard plotting for debugging and analysis
+tensorboard>=2.10.0    # Essential for logging training metrics
+open3d>=0.17.0         # Highly useful for 3D visualization of point clouds and bounding boxes
